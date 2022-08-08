@@ -1,0 +1,210 @@
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+    <style>
+        .ko {
+            font-size: 2.2rem;
+            position: absolute;
+            left: 84%;
+            top: 30%;
+        }
+
+        .s {
+            font-size: 2.2rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .changname1 {
+            border: 10px black;
+        }
+
+        button.modals {
+            width: 30%;
+            height: 25px;
+            position: absolute;
+            left: 36.5%;
+            top: 50%;
+            border-radius: 10px;
+            background-color: green;
+        }
+
+        input.modal {
+            width: 75%;
+            height: 25px;
+            position: absolute;
+            left: 13.5%;
+            top: 25%;
+            border: 0;
+            border-radius: 10px;
+            background-color: green;
+            height: 10%;
+            font-size: 1.5em;
+        }
+
+        .commit {
+            width: 30%;
+            height: 25px;
+            position: absolute;
+            left: 36.5%;
+            top: 65%;
+            border-radius: 10px;
+            background-color: green;
+        }
+
+        #me1 {
+            font-size: 1.2rem;
+            position: absolute;
+            left: 6%;
+            top: 50%;
+            transform: translate(0%, -150%);
+            color: black;
+        }
+        .sals{
+            margin-bottom: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="title">우리집 전력 관리</span>
+    </div>
+    <div class="tab">
+        <h2 id="me1" onclick="changname1()" class="k">멀티탭1</h2>
+        <h4 id="mes1">off</h4>
+        <button class="k ON3" onclick="onandoff('ON','mes1')">ON</button>
+        <button class="k OFF3"  onclick="onandoff('OFF','mes1')">OFF</button>
+        <span class="material-symbols-outlined ko" onclick="location.href='./one.html'">
+            settings
+        </span>
+    </div>
+    <div class="tab">
+        <h2 id="me2" onclick="changname2()" class="k">멀티탭2</h2>
+        <h4 id="mes2">off</h4>
+        <button class="k ON3" onclick="onandoff('ON','mes2')">ON</button>
+        <button class="k OFF3"  onclick="onandoff('OFF','mes2')">OFF</button>
+        <span class="material-symbols-outlined ko" onclick="location.href='./one.html'">
+            settings
+        </span>
+    </div>
+    <div class="tab">
+        <h2 id="me3" onclick="changname3()" class="k">멀티탭3</h2>
+        <h4 id="mes3">off</h4>
+        <button class="k ON3" onclick="onandoff('ON','mes3')">ON</button>
+        <button class="k OFF3"  onclick="onandoff('OFF','mes3')">OFF</button>
+        <span class="material-symbols-outlined ko" onclick="location.href='./one.html'">
+            settings
+        </span>
+    </div>
+    <div class="tab sals">
+        <span class="material-symbols-outlined s">
+            add
+        </span>
+    </div>
+    <div id="head-menu" role="navigation" style="height: 50px;">
+        <div class="material-symbols-outlined a" onclick="location.href ='./index.html'">
+            home
+        </div>
+        <div class="material-symbols-outlined a" onclick="location.href ='./plus.html'">
+            add
+        </div>
+        <div class="material-symbols-outlined a" onclick="location.href ='./report.html'">
+            compost
+        </div>
+        <div class="material-symbols-outlined a" onclick="location.href ='./setting_two.html'">
+            settings
+        </div>
+    </div>
+    <div class="changname1">
+        <input type="text" id="txt1" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save1()">확인</button>
+        <button class="commit" onclick="back()">취소</button>
+    </div>
+    <div class="changname2">
+        <input type="text" id="txt2" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save2()">확인</button>
+        <button class="commit" onclick="back()">취소</button>
+    </div>
+    <div class="changname3">
+        <input type="text" id="txt3" class="modal1" value="" autofocus="true" />
+        <button type="button" class="modals" onclick="save3()">확인</button>
+        <button class="commit" onclick="back()">취소</button>
+    </div>
+    <script>
+        function init1() {
+            let val = localStorage.getItem("myVal1");
+
+            if (val == null || val == undefined) {
+                val = '멀티탭1';
+            }
+
+            document.getElementById("txt1").value = val;
+            document.getElementById("me1").textContent = val;
+        }
+
+        function save1() {
+            localStorage.setItem("myVal1", document.getElementById("txt1").value)
+            document.querySelector('.changname1').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt1").value;
+            document.getElementById("me1").textContent = name;
+        }
+
+        init1();
+
+        function init2() {
+            let val = localStorage.getItem("myVal2");
+
+            if (val == null || val == undefined) {
+                val = '멀티탭2';
+            }
+
+            document.getElementById("txt2").value = val;
+            document.getElementById("me2").textContent = val;
+        }
+
+        function save2() {
+            localStorage.setItem("myVal2", document.getElementById("txt2").value)
+            document.querySelector('.changname2').style.display = 'none';
+            //self.location.reload(true);
+            let name = document.getElementById("txt2").value;
+            document.getElementById("me2").textContent = name;
+        }
+
+        init2();
+
+        function init3() {
+            let val = localStorage.getItem("myVal3");
+
+            if (val == null || val == undefined) {
+                val = '멀티탭3';
+            }
+
+            document.getElementById("txt3").value = val;
+            document.getElementById("me3").textContent = val;
+        }
+
+        function save3() {
+            localStorage.setItem("myVal3", document.getElementById("txt3").value)
+            document.querySelector('.changname3').style.display = 'none';
+            let name = document.getElementById("txt3").value;
+            document.getElementById("me3").textContent = name;
+        }
+
+        init3();
+
+    </script>
+</body>
+
+</html>
