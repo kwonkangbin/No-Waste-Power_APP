@@ -1,0 +1,142 @@
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        fieldset{
+            background-color: greenyellow;
+            border: none;
+            border-radius: 10px;
+            width: 87%;
+            margin: 1rem auto;
+            color: black;
+        }
+        legend{
+            border-radius: 10px;
+            padding: 1.5% 2% 1.5% 2%;
+            border: none;
+            background-color: beige;
+        }
+        .time{
+            height: 21%;
+            position: relative;
+        }
+        .chadan{
+            height: 16%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ai{
+            height: 19%;
+            position: relative;
+        }
+        .bu{
+            border-radius: 10px;
+            position: absolute;
+            top: 85.5%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 30%;
+            height: 7%;
+        }
+        #data_hh,#data_hh2,#data_mm,#data_mm2{
+            width: 25%;
+            background-color: beige;
+            color: black;
+            border: none;
+            height: 18%;
+        }
+        label.off{
+            position: absolute;
+            left: 17%;
+            top: 30%;
+            width: 90%;
+        }
+        label.on{
+            position: absolute;
+            left: 17%;
+            top: 60%;
+            width: 90%;
+        }
+        label{
+            font-size: 0.85rem;
+        }
+        .ONs{
+            background-color: darkgreen;
+            border-radius: 10px;
+            width: 25%;
+            height: 30%;
+            position: absolute;
+            top: 50%;
+            left: 22%;
+        }
+        .OFFs{
+            background-color: darkgreen;
+            border-radius: 10px;
+            width: 25%;
+            height: 30%;
+            position: absolute;
+            top: 50%;
+            left: 53%;
+        }
+        p{
+            padding: 4%;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="title">세부설정</span>
+    <form>
+        <fieldset class="time">
+            <legend class="l1"><b>시간 설정</b></legend>
+            <label for="odk" class="off">끄는 시간
+                <input id='data_hh' class="ok" type="text"> <b>:</b>
+                <input id='data_mm' class="ok" type="text">
+            </label>
+            <br>
+            <label for="odk" class="on">키는 시간
+                <input id='data_hh2' class="ok" type="text"> <b>:</b>
+                <input id='data_mm2' class="ok" type="text">
+            </label>
+        </fieldset>
+    </form>
+    <form>
+        <fieldset class="chadan">
+            <legend class="l2"><b>자동차단 전력량 설정 on/off</b></legend>
+            <label for="odk">차단할 전력량<input type="text"> W</label>
+        </fieldset>
+    </form>
+    <form>
+        <fieldset class="ai">
+            <legend class="l3"><b>AI 자동모드</b></legend>
+            <p>NWP 앱이 추천하는 전력량을 기준으로 전력이 자동으로 차단됩니다.</p>
+            <a href=""><button class="ONs">ON</button></a>
+            <a href=""><button class="OFFs">OFF</button></a>
+        </fieldset>
+    </form>
+    <button class="bu" onclick="timego()">완료</button>
+    <div id="head-menu" role="navigation" style="height: 50px;">
+        <div class="material-symbols-outlined a" onclick="location.href ='./index.html'">
+            home
+        </div>
+        <div class="material-symbols-outlined a" onclick="location.href ='./plus.html'">
+            add
+        </div>
+        <div class="material-symbols-outlined a" onclick="location.href ='./report.html'">
+            compost
+        </div>
+        <div class="material-symbols-outlined a" onclick="location.href ='./setting_two.html'">
+            settings
+        </div>
+    </div>
+</body>
+
+</html>
